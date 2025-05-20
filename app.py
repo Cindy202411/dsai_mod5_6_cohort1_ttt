@@ -70,6 +70,12 @@ def delete_log():
     conn.close()
     return(render_template("delete_log.html"))
 
+@app.route("/logout",methods=["GET","POST"])
+def logout():
+    global first_time
+    first_time = 1
+    return(render_template("index.html"))
+
 if __name__ == "__main__":
     app.run()
 
